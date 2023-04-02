@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,10 +19,29 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4V-nb-Kum" userLabel="USAView">
                                 <rect key="frame" x="0.0" y="0.0" width="426" height="393"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZf-Kp-FZD" userLabel="USALabelView">
+                                        <rect key="frame" x="0.0" y="196.66666666666663" width="852" height="196.33333333333337"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstItem="TZf-Kp-FZD" firstAttribute="leading" secondItem="b4V-nb-Kum" secondAttribute="leading" id="JkQ-DJ-XxE"/>
+                                    <constraint firstAttribute="bottom" secondItem="TZf-Kp-FZD" secondAttribute="bottom" id="RT4-SN-0Oq"/>
+                                    <constraint firstAttribute="trailing" secondItem="TZf-Kp-FZD" secondAttribute="centerX" id="ZhN-pn-NCd"/>
+                                    <constraint firstItem="TZf-Kp-FZD" firstAttribute="top" secondItem="b4V-nb-Kum" secondAttribute="centerY" id="zFa-9i-k2i"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0h-WK-tW6" userLabel="USSRView">
                                 <rect key="frame" x="426" y="0.0" width="426" height="393"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4F-NC-pax">
+                                        <rect key="frame" x="93" y="218" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SgS-Xf-fmf" userLabel="StartButton">
@@ -36,10 +56,10 @@
                                 </connections>
                             </button>
                             <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6y-wv-G0c" userLabel="InfoView">
-                                <rect key="frame" x="0.0" y="75" width="852" height="50"/>
+                                <rect key="frame" x="59" y="16" width="734" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOt-5B-DV6" userLabel="SettingsButton">
-                                        <rect key="frame" x="786" y="8" width="50" height="34"/>
+                                        <rect key="frame" x="668" y="8" width="50" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="anP-oz-Z9Q"/>
                                         </constraints>
@@ -50,7 +70,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbe-pt-Gnv" userLabel="Round">
-                                        <rect key="frame" x="401.33333333333331" y="8" width="49.333333333333314" height="34"/>
+                                        <rect key="frame" x="342.33333333333331" y="8" width="49.333333333333314" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

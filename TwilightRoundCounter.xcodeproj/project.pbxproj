@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4413B3DB29DA1C7C00123336 /* ImageCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4413B3DA29DA1C7C00123336 /* ImageCellLabel.swift */; };
 		443955E629D5838A00361829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443955E529D5838A00361829 /* AppDelegate.swift */; };
 		443955E829D5838A00361829 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443955E729D5838A00361829 /* SceneDelegate.swift */; };
 		443955EA29D5838A00361829 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443955E929D5838A00361829 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4413B3DA29DA1C7C00123336 /* ImageCellLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellLabel.swift; sourceTree = "<group>"; };
 		443955E229D5838A00361829 /* TwilightRoundCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwilightRoundCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		443955E529D5838A00361829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		443955E729D5838A00361829 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4413B3D929DA1BBF00123336 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4413B3DA29DA1C7C00123336 /* ImageCellLabel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		443955D929D5838A00361829 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		443955E429D5838A00361829 /* TwilightRoundCounter */ = {
 			isa = PBXGroup;
 			children = (
+				4413B3D929DA1BBF00123336 /* Models */,
 				443955E529D5838A00361829 /* AppDelegate.swift */,
 				443955E729D5838A00361829 /* SceneDelegate.swift */,
 				443955E929D5838A00361829 /* ViewController.swift */,
@@ -140,6 +151,7 @@
 			files = (
 				443955EA29D5838A00361829 /* ViewController.swift in Sources */,
 				443955E629D5838A00361829 /* AppDelegate.swift in Sources */,
+				4413B3DB29DA1C7C00123336 /* ImageCellLabel.swift in Sources */,
 				443955E829D5838A00361829 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
