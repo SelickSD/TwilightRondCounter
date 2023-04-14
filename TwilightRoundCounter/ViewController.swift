@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         roundLabel.text = "Для запуска игры нажми кнопку Start"
-        setupGestures()
     }
 
     private func setupGestures() {
@@ -38,7 +37,7 @@ class ViewController: UIViewController {
     private func startMiddleGame() {
 
         let alert = UIAlertController(title: "Середина войны",
-                                      message: "В начале 4го хода в колоду замешиваются и раздаются карты середины войны\nОтбой в колоду не замешивается\nИгроки получают по 9 карт\nХод длится 7 рауднов",
+                                      message: "В начале 4го хода в колоду замешиваются и раздаются карты середины войны\nОтбой в колоду не замешивается\nИгроки получают по 9 карт\nХод длится 7 раундов",
                                       preferredStyle: .alert)
         let action = UIAlertAction(title: "Готово", style: .default, handler: nil)
         alert.addAction(action)
@@ -51,7 +50,7 @@ class ViewController: UIViewController {
     private func startEndGame() {
 
         let alert = UIAlertController(title: "Окончание войны",
-                                      message: "В начале 8го хода в колоду замешиваются и раздаются карты Окончания войны\nОтбой в колоду не замешивается\nИгроки получают по 9 карт\nХод длится 7 рауднов",
+                                      message: "В начале 8го хода в колоду замешиваются и раздаются карты Окончания войны\nОтбой в колоду не замешивается\nИгроки получают по 9 карт\nХод длится 7 раундов",
                                       preferredStyle: .alert)
         let action = UIAlertAction(title: "Готово", style: .default, handler: nil)
         alert.addAction(action)
@@ -102,6 +101,8 @@ class ViewController: UIViewController {
         DispatchQueue.main.async { () -> Void in
             self.present(alert, animated: true, completion: nil)
         }
+
+        setupGestures()
     }
 
     private func USSAAction() {
@@ -249,5 +250,43 @@ class ViewController: UIViewController {
     @objc private func tapAction() {
         switchAction()
     }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+
+    private var sideInset: CGFloat { return 8 }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width = (collectionView.bounds.width - sideInset * 3) / 2
+        return CGSize(width: width, height: width)
+
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: sideInset, left: sideInset, bottom: sideInset, right: sideInset)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return sideInset
+    }
+
+}
+
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = UICollectionViewCell()
+        cell.backgroundColor = .cyan
+        return cell
+    }
+
+
 }
 

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44041E4C29E7C4DF0071556B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E4B29E7C4DF0071556B /* GameViewController.swift */; };
+		44041E4E29E7C5330071556B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E4D29E7C5330071556B /* MainView.swift */; };
+		44041E5129E7CF740071556B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E5029E7CF740071556B /* UIColor+Extension.swift */; };
+		44041E5529E8062F0071556B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E5429E8062F0071556B /* CustomButton.swift */; };
+		44041E5729E8082F0071556B /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E5629E8082F0071556B /* AlertModel.swift */; };
 		4413B3DB29DA1C7C00123336 /* ImageCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4413B3DA29DA1C7C00123336 /* ImageCellLabel.swift */; };
 		443955E629D5838A00361829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443955E529D5838A00361829 /* AppDelegate.swift */; };
 		443955E829D5838A00361829 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443955E729D5838A00361829 /* SceneDelegate.swift */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44041E4B29E7C4DF0071556B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		44041E4D29E7C5330071556B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		44041E5029E7CF740071556B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		44041E5429E8062F0071556B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		44041E5629E8082F0071556B /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		4413B3DA29DA1C7C00123336 /* ImageCellLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellLabel.swift; sourceTree = "<group>"; };
 		443955E229D5838A00361829 /* TwilightRoundCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwilightRoundCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		443955E529D5838A00361829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,10 +49,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44041E4A29E7C4B10071556B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44041E4B29E7C4DF0071556B /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44041E4F29E7CF240071556B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				44041E5029E7CF740071556B /* UIColor+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4413B3D929DA1BBF00123336 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				4413B3DA29DA1C7C00123336 /* ImageCellLabel.swift */,
+				44041E4D29E7C5330071556B /* MainView.swift */,
+				44041E5429E8062F0071556B /* CustomButton.swift */,
+				44041E5629E8082F0071556B /* AlertModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -66,6 +95,8 @@
 		443955E429D5838A00361829 /* TwilightRoundCounter */ = {
 			isa = PBXGroup;
 			children = (
+				44041E4F29E7CF240071556B /* Extensions */,
+				44041E4A29E7C4B10071556B /* Controllers */,
 				4413B3D929DA1BBF00123336 /* Models */,
 				443955E529D5838A00361829 /* AppDelegate.swift */,
 				443955E729D5838A00361829 /* SceneDelegate.swift */,
@@ -149,7 +180,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44041E5529E8062F0071556B /* CustomButton.swift in Sources */,
+				44041E5129E7CF740071556B /* UIColor+Extension.swift in Sources */,
+				44041E4C29E7C4DF0071556B /* GameViewController.swift in Sources */,
+				44041E4E29E7C5330071556B /* MainView.swift in Sources */,
 				443955EA29D5838A00361829 /* ViewController.swift in Sources */,
+				44041E5729E8082F0071556B /* AlertModel.swift in Sources */,
 				443955E629D5838A00361829 /* AppDelegate.swift in Sources */,
 				4413B3DB29DA1C7C00123336 /* ImageCellLabel.swift in Sources */,
 				443955E829D5838A00361829 /* SceneDelegate.swift in Sources */,
