@@ -9,6 +9,8 @@ import UIKit
 
 class MainView: UIView {
 
+    var viewController: GameViewControllerProtocol!
+
     //MARK: View
     let USAView: UIView = {
         let view = UIView()
@@ -72,7 +74,8 @@ class MainView: UIView {
     }
 
     @objc func didTapStartButton() {
-        print("123")
+        startButton.removeFromSuperview()
+        viewController.startGame()
     }
 
     private func drawSelf() {

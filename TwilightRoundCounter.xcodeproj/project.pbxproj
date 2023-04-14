@@ -12,6 +12,11 @@
 		44041E5129E7CF740071556B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E5029E7CF740071556B /* UIColor+Extension.swift */; };
 		44041E5529E8062F0071556B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E5429E8062F0071556B /* CustomButton.swift */; };
 		44041E5729E8082F0071556B /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E5629E8082F0071556B /* AlertModel.swift */; };
+		44041E5A29E9D35E0071556B /* AlertPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E5929E9D35E0071556B /* AlertPresenter.swift */; };
+		44041E5D29E9D3DB0071556B /* AlertPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E5C29E9D3DB0071556B /* AlertPresenterProtocol.swift */; };
+		44041E5F29E9D3F60071556B /* AlertPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E5E29E9D3F60071556B /* AlertPresenterDelegate.swift */; };
+		44041E6129E9D5E80071556B /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E6029E9D5E80071556B /* GameCenter.swift */; };
+		44041E6329E9D6610071556B /* GameViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44041E6229E9D6610071556B /* GameViewControllerProtocol.swift */; };
 		4413B3DB29DA1C7C00123336 /* ImageCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4413B3DA29DA1C7C00123336 /* ImageCellLabel.swift */; };
 		443955E629D5838A00361829 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443955E529D5838A00361829 /* AppDelegate.swift */; };
 		443955E829D5838A00361829 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443955E729D5838A00361829 /* SceneDelegate.swift */; };
@@ -27,6 +32,11 @@
 		44041E5029E7CF740071556B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		44041E5429E8062F0071556B /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		44041E5629E8082F0071556B /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		44041E5929E9D35E0071556B /* AlertPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenter.swift; sourceTree = "<group>"; };
+		44041E5C29E9D3DB0071556B /* AlertPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenterProtocol.swift; sourceTree = "<group>"; };
+		44041E5E29E9D3F60071556B /* AlertPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresenterDelegate.swift; sourceTree = "<group>"; };
+		44041E6029E9D5E80071556B /* GameCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
+		44041E6229E9D6610071556B /* GameViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewControllerProtocol.swift; sourceTree = "<group>"; };
 		4413B3DA29DA1C7C00123336 /* ImageCellLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCellLabel.swift; sourceTree = "<group>"; };
 		443955E229D5838A00361829 /* TwilightRoundCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwilightRoundCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		443955E529D5838A00361829 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +75,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		44041E5829E9D2D50071556B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				44041E5929E9D35E0071556B /* AlertPresenter.swift */,
+				44041E6029E9D5E80071556B /* GameCenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		44041E5B29E9D39F0071556B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				44041E5C29E9D3DB0071556B /* AlertPresenterProtocol.swift */,
+				44041E5E29E9D3F60071556B /* AlertPresenterDelegate.swift */,
+				44041E6229E9D6610071556B /* GameViewControllerProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		4413B3D929DA1BBF00123336 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +124,8 @@
 		443955E429D5838A00361829 /* TwilightRoundCounter */ = {
 			isa = PBXGroup;
 			children = (
+				44041E5B29E9D39F0071556B /* Services */,
+				44041E5829E9D2D50071556B /* Presentation */,
 				44041E4F29E7CF240071556B /* Extensions */,
 				44041E4A29E7C4B10071556B /* Controllers */,
 				4413B3D929DA1BBF00123336 /* Models */,
@@ -180,11 +211,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44041E6329E9D6610071556B /* GameViewControllerProtocol.swift in Sources */,
 				44041E5529E8062F0071556B /* CustomButton.swift in Sources */,
 				44041E5129E7CF740071556B /* UIColor+Extension.swift in Sources */,
+				44041E6129E9D5E80071556B /* GameCenter.swift in Sources */,
+				44041E5F29E9D3F60071556B /* AlertPresenterDelegate.swift in Sources */,
 				44041E4C29E7C4DF0071556B /* GameViewController.swift in Sources */,
 				44041E4E29E7C5330071556B /* MainView.swift in Sources */,
 				443955EA29D5838A00361829 /* ViewController.swift in Sources */,
+				44041E5A29E9D35E0071556B /* AlertPresenter.swift in Sources */,
+				44041E5D29E9D3DB0071556B /* AlertPresenterProtocol.swift in Sources */,
 				44041E5729E8082F0071556B /* AlertModel.swift in Sources */,
 				443955E629D5838A00361829 /* AppDelegate.swift in Sources */,
 				4413B3DB29DA1C7C00123336 /* ImageCellLabel.swift in Sources */,

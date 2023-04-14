@@ -7,17 +7,22 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GameViewControllerProtocol, AlertPresenterDelegate {
 
     private let mainView = MainView()
+    private var gameCenter: GameCenter!
+    private var alertPresenter: AlertPresenterProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        gameCenter = GameCenter(viewController: self)
+        alertPresenter = AlertPresenter(delegate: self)
         setupView()
     }
     
     private func setupView() {
+        mainView.viewController = self
         view.addSubview(mainView)
 
         NSLayoutConstraint.activate([
@@ -26,5 +31,20 @@ class GameViewController: UIViewController {
             mainView.topAnchor.constraint(equalTo: view.topAnchor),
             mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+
+    func showAlert(alertModel: AlertModel?) {
+        alertPresenter?.showAlert(alertModel: alertModel)
+    }
+
+    func didPrepareAlert(alert: UIAlertController?) {
+        guard let alert = alert else { return }
+        DispatchQueue.main.async { () -> Void in
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    func startGame() {
+        print(123123)
     }
 }
