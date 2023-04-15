@@ -10,6 +10,7 @@ import Foundation
 protocol GameViewControllerProtocol {
     func showAlert(alertModel: AlertModel?)
     func startGame()
+    func updateGameStatus(currentRound: Int, currentAction: Int, isFirstAction: Bool)
 }
 
 

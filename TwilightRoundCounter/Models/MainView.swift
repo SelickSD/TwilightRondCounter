@@ -10,6 +10,8 @@ import UIKit
 class MainView: UIView {
 
     var viewController: GameViewControllerProtocol!
+    var USAViewTrailingAnchor: NSLayoutConstraint!
+
 
     //MARK: View
     let USAView: UIView = {
@@ -76,10 +78,25 @@ class MainView: UIView {
     @objc func didTapStartButton() {
         startButton.removeFromSuperview()
         viewController.startGame()
+
+        let screenSize = UIScreen.main.bounds
+
+        UIView.animate(withDuration: 0.5, delay: 0.0) {
+            NSLayoutConstraint.activate([
+                self.USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -screenSize.width * 0.35)
+            ])
+            self.layoutIfNeeded()
+        }
+    }
+
+    func updateGameStatus(currentRound: Int, currentAction: Int, isFirstAction: Bool) {
+        statusLabel.text = "Ход: \(currentAction) Раунд: \(currentRound)"
     }
 
     private func drawSelf() {
         self.translatesAutoresizingMaskIntoConstraints = false
+        USAViewTrailingAnchor = USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor)
+        USAViewTrailingAnchor.priority = UILayoutPriority(900)
 
 
         self.addSubview(USAView)
@@ -94,10 +111,11 @@ class MainView: UIView {
             USAView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             USAView.topAnchor.constraint(equalTo: self.topAnchor),
             USAView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor),
+//            USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor),
+            USAViewTrailingAnchor,
 
             //MARK: USSRView
-            USSRView.leadingAnchor.constraint(equalTo: self.centerXAnchor),
+            USSRView.leadingAnchor.constraint(equalTo: USAView.trailingAnchor),
             USSRView.topAnchor.constraint(equalTo: self.topAnchor),
             USSRView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             USSRView.trailingAnchor.constraint(equalTo: self.trailingAnchor),

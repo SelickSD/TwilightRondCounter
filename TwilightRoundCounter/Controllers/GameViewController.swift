@@ -45,6 +45,10 @@ class GameViewController: UIViewController, GameViewControllerProtocol, AlertPre
     }
 
     func startGame() {
-        print(123123)
+        gameCenter.startGame()
+    }
+
+    func updateGameStatus(currentRound: Int, currentAction: Int, isFirstAction: Bool) {
+        mainView.updateGameStatus(currentRound: currentRound, currentAction: currentAction, isFirstAction: isFirstAction)
     }
 }
