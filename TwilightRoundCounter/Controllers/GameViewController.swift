@@ -46,9 +46,32 @@ class GameViewController: UIViewController, GameViewControllerProtocol, AlertPre
 
     func startGame() {
         gameCenter.startGame()
+        setupGesture()
     }
 
     func updateGameStatus(currentRound: Int, currentAction: Int, isFirstAction: Bool) {
         mainView.updateGameStatus(currentRound: currentRound, currentAction: currentAction, isFirstAction: isFirstAction)
     }
+
+    private func setupGesture() {
+        let blueGesture = UITapGestureRecognizer(target: self, action: #selector(blueViewTapped))
+        mainView.addGestureRecognizer(blueGesture)
+        mainView.isUserInteractionEnabled = true
+
+//        let redGesture = UITapGestureRecognizer(target: self, action: #selector(redViewTapped))
+//        mainView.USSRView.addGestureRecognizer(redGesture)
+//        mainView.USSRView.isUserInteractionEnabled = true
+    }
+
+    func changeView() {
+        mainView.blueViewMax()
+    }
+
+    @objc private func blueViewTapped() {
+        gameCenter.switchAction()
+    }
+
+//    @objc private func redViewTapped() {
+//        mainView.blueViewMax()
+//    }
 }

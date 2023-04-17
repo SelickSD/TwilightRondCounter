@@ -11,6 +11,7 @@ class MainView: UIView {
 
     var viewController: GameViewControllerProtocol!
     var USAViewTrailingAnchor: NSLayoutConstraint!
+    private var isBlueViewMax: Bool
 
 
     //MARK: View
@@ -66,8 +67,8 @@ class MainView: UIView {
     }()
 
     override init(frame: CGRect) {
+        isBlueViewMax = true
         super.init(frame: frame)
-
         drawSelf()
     }
 
@@ -75,18 +76,45 @@ class MainView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func blueViewMax() {
+
+        let screenSize = UIScreen.main.bounds
+USAViewTrailingAnchor.priority = UILayoutPriority(910)
+//        USAViewTrailingAnchor = USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -screenSize.width * 0.35)
+
+
+        if isBlueViewMax {
+            USAViewTrailingAnchor.priority = UILayoutPriority(900)
+            USAViewTrailingAnchor = USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -screenSize.width * 0.35)
+
+
+            UIView.animate(withDuration: 0.5, delay: 0.0) {
+                NSLayoutConstraint.activate([
+                    self.USAViewTrailingAnchor
+                ])
+                self.layoutIfNeeded()
+            }
+            isBlueViewMax.toggle()
+
+        } else {
+            USAViewTrailingAnchor.priority = UILayoutPriority(900)
+            USAViewTrailingAnchor = USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: screenSize.width * 0.35)
+
+            UIView.animate(withDuration: 0.5, delay: 0.0) {
+                NSLayoutConstraint.activate([
+                    self.USAViewTrailingAnchor
+                ])
+                self.layoutIfNeeded()
+            }
+            isBlueViewMax.toggle()
+        }
+
+    }
+
     @objc func didTapStartButton() {
         startButton.removeFromSuperview()
         viewController.startGame()
-
-        let screenSize = UIScreen.main.bounds
-
-        UIView.animate(withDuration: 0.5, delay: 0.0) {
-            NSLayoutConstraint.activate([
-                self.USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -screenSize.width * 0.35)
-            ])
-            self.layoutIfNeeded()
-        }
+        blueViewMax()
     }
 
     func updateGameStatus(currentRound: Int, currentAction: Int, isFirstAction: Bool) {
@@ -111,7 +139,7 @@ class MainView: UIView {
             USAView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             USAView.topAnchor.constraint(equalTo: self.topAnchor),
             USAView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-//            USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor),
+            //            USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor),
             USAViewTrailingAnchor,
 
             //MARK: USSRView
