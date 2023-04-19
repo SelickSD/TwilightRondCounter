@@ -71,6 +71,10 @@ class GameViewController: UIViewController, GameViewControllerProtocol, AlertPre
         gameCenter.switchAction()
     }
 
+    func resetGame() {
+        gameCenter.resetGame()
+    }
+
 //    @objc private func redViewTapped() {
 //        mainView.blueViewMax()
 //    }

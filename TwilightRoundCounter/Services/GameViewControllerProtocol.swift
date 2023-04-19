@@ -12,6 +12,7 @@ protocol GameViewControllerProtocol {
     func startGame()
     func updateGameStatus(currentRound: Int, currentAction: Int, isFirstAction: Bool)
     func changeView()
+    func resetGame()
 }
 
 

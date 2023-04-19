@@ -19,6 +19,12 @@ class GameCenter {
         self.viewController = viewController
     }
 
+    func resetGame() {
+        currentRound = 1
+        currentAction = 1
+        isFirstAction = true
+    }
+
     func startGame() {
         let alert = AlertModel(title: "Начало войны",
                                message: "Раздайте каждому игроку по 8 карт.\nПоложите Карту Китая.\nПоместите дополнительное влияние\n СССР:\n6 единиц в Восточной Европе,\nСША: 7 единиц в Западной Европе\nХод длится 6 раундов",

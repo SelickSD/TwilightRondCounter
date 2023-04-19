@@ -54,6 +54,7 @@ class MainView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "gearshape"), for: .normal)
+        button.addTarget(self, action: #selector(didTapSettingsButton), for: .touchUpInside)
         return button
     }()
 
@@ -79,8 +80,8 @@ class MainView: UIView {
     func blueViewMax() {
 
         let screenSize = UIScreen.main.bounds
-USAViewTrailingAnchor.priority = UILayoutPriority(910)
-//        USAViewTrailingAnchor = USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -screenSize.width * 0.35)
+        USAViewTrailingAnchor.priority = UILayoutPriority(910)
+        //        USAViewTrailingAnchor = USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -screenSize.width * 0.35)
 
 
         if isBlueViewMax {
@@ -117,6 +118,28 @@ USAViewTrailingAnchor.priority = UILayoutPriority(910)
         blueViewMax()
     }
 
+    @objc func didTapSettingsButton() {
+        self.addSubview(startButton)
+        USAViewTrailingAnchor.priority = UILayoutPriority(900)
+        USAViewTrailingAnchor = USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor)
+        //        USAViewTrailingAnchor.priority = UILayoutPriority(900)
+
+        UIView.animate(withDuration: 0.5, delay: 0.0) {
+
+            NSLayoutConstraint.activate([self.USAViewTrailingAnchor,
+                                         self.startButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                                         self.startButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                                         self.startButton.heightAnchor.constraint(equalToConstant: 50),
+                                         self.startButton.widthAnchor.constraint(equalToConstant: 150)
+                                        ])
+
+            self.layoutIfNeeded()
+        }
+        statusLabel.text = "Для запуска игры нажми кнопку Start"
+        isBlueViewMax = true
+        viewController.resetGame()
+    }
+
     func updateGameStatus(currentRound: Int, currentAction: Int, isFirstAction: Bool) {
         statusLabel.text = "Ход: \(currentAction) Раунд: \(currentRound)"
     }
@@ -139,7 +162,6 @@ USAViewTrailingAnchor.priority = UILayoutPriority(910)
             USAView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             USAView.topAnchor.constraint(equalTo: self.topAnchor),
             USAView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            //            USAView.trailingAnchor.constraint(equalTo: self.centerXAnchor),
             USAViewTrailingAnchor,
 
             //MARK: USSRView
@@ -153,7 +175,7 @@ USAViewTrailingAnchor.priority = UILayoutPriority(910)
             startButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             startButton.heightAnchor.constraint(equalToConstant: 50),
             startButton.widthAnchor.constraint(equalToConstant: 150),
-
+            
             //MARK: infoView
             infoView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             infoView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
