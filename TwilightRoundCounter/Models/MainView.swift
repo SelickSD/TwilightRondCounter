@@ -38,6 +38,24 @@ class MainView: UIView {
         return view
     }()
 
+    let USABackGroundView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.alpha = 0.5
+//        view.layer.cornerRadius = 12
+        return view
+    }()
+
+    let USSABackGroundView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        view.alpha = 0.5
+//        view.layer.cornerRadius = 12
+        return view
+    }()
+
     //MARK: Button
     lazy var startButton: CustomButton = {
         let button = CustomButton()
@@ -152,10 +170,12 @@ class MainView: UIView {
 
         self.addSubview(USAView)
         self.addSubview(USSRView)
-        self.addSubview(startButton)
         self.addSubview(infoView)
         self.addSubview(settingsButton)
         self.addSubview(statusLabel)
+        self.addSubview(USABackGroundView)
+        self.addSubview(USSABackGroundView)
+        self.addSubview(startButton)
 
         NSLayoutConstraint.activate([
             //MARK: USAView
@@ -191,7 +211,19 @@ class MainView: UIView {
             //MARK: statusLabel
             statusLabel.centerXAnchor.constraint(equalTo: infoView.centerXAnchor),
             statusLabel.centerYAnchor.constraint(equalTo: infoView.centerYAnchor),
-            statusLabel.topAnchor.constraint(equalTo: infoView.topAnchor, constant: 8)
+            statusLabel.topAnchor.constraint(equalTo: infoView.topAnchor, constant: 8),
+
+            //MARK: USABackGroundView
+            USABackGroundView.leadingAnchor.constraint(equalTo: USAView.leadingAnchor),
+            USABackGroundView.trailingAnchor.constraint(equalTo: USAView.trailingAnchor),
+            USABackGroundView.bottomAnchor.constraint(equalTo: USAView.bottomAnchor),
+            USABackGroundView.topAnchor.constraint(equalTo: USAView.centerYAnchor),
+
+            //MARK: USSABackGroundView
+            USSABackGroundView.leadingAnchor.constraint(equalTo: USSRView.leadingAnchor),
+            USSABackGroundView.trailingAnchor.constraint(equalTo: USSRView.trailingAnchor),
+            USSABackGroundView.bottomAnchor.constraint(equalTo: USSRView.bottomAnchor),
+            USSABackGroundView.topAnchor.constraint(equalTo: USSRView.centerYAnchor)
         ])
     }
 }
